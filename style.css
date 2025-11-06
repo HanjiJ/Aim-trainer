@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: radial-gradient(circle at center, #050816, #000);
+  color: #e0e8ff;
+  overflow: hidden;
+}
+
+/* Основная компоновка */
+.app {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  width: 280px;
+  background: rgba(15, 25, 45, 0.8);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.05);
+}
+
+/* Заголовок */
+.brand {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  font-weight: 700;
+  font-size: 22px;
+  color: #00f5d4;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 255, 200, 0.4);
+}
+
+/* Кнопки */
+.controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn {
+  border: none;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.25s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 8px rgba(255,255,255,0.1);
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, #00c9ff, #92fe9d);
+  box-shadow: 0 0 12px rgba(0, 255, 200, 0.4);
+}
+.btn.primary:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+
+.btn.danger {
+  background: linear-gradient(90deg, #ff0844, #ffb199);
+  box-shadow: 0 0 12px rgba(255, 80, 80, 0.4);
+}
+.btn.danger:hover {
+  filter: brightness(1.15);
+  transform: scale(1.05);
+}
+
+.btn.secondary {
+  background: linear-gradient(90deg, #64748b, #94a3b8);
+  box-shadow: 0 0 10px rgba(150,150,150,0.2);
+}
+.btn.secondary:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+
+/* Секции */
+.stats, .settings {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  margin: 8px 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #60a5fa;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Элементы настроек */
+label {
+  font-size: 13px;
+  margin-top: 8px;
+  display: block;
+}
+
+input[type=range] {
+  width: 100%;
+  accent-color: #00f5d4;
+  cursor: pointer;
+}
+
+select {
+  width: 100%;
+  padding: 6px;
+  border-radius: 5px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #000000;
+  cursor: pointer;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+footer {
+  margin-top: auto;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.6;
+  letter-spacing: 0.5px;
+}
+
+/* Игра */
+.game-area {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: radial-gradient(circle at center, #050816, #000);
+  cursor: crosshair;
+}
+
+.hud {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 14px;
+  color: #9cc9ff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
